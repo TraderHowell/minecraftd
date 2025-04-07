@@ -477,7 +477,7 @@ socket_session_is_alive() {
 	fi
 }
 
-jar {
+jar() {
     "${SUDO_CMD[@]}" curl -o "${SERVER_ROOT}"/"${MAIN_EXECUTABLE}" $(curl -s $(curl -s "https://launchermeta.mojang.com/mc/game/version_manifest.json" | jq -r '.latest.release as $v | .versions[] | select(.id == $v) | .url') | jq -r '.downloads.server.url')
 }
 
