@@ -501,7 +501,7 @@ help() {
 	    restore [filename]   Restore the world data from a backup
 	    command <command>    Run the given command at the ${GAME} server console
 	    console              Enter the server console through a tmux session
-		jar                  Get the latest vanilla jar
+	    jar                  Get the latest vanilla jar
 
 	EOF
 }
