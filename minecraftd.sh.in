@@ -477,6 +477,10 @@ socket_session_is_alive() {
 	fi
 }
 
+jar {
+    "${SUDO_CMD[@]}" curl -o "${SERVER_ROOT}"/"${MAIN_EXECUTABLE}" $(curl -s $(curl -s "https://launchermeta.mojang.com/mc/game/version_manifest.json" | jq -r '.latest.release as $v | .versions[] | select(.id == $v) | .url') | jq -r '.downloads.server.url')
+}
+
 # Help function, no arguments required
 help() {
 	cat <<-EOF
@@ -497,6 +501,7 @@ help() {
 	    restore [filename]   Restore the world data from a backup
 	    command <command>    Run the given command at the ${GAME} server console
 	    console              Enter the server console through a tmux session
+		jar                  Get the latest vanilla jar
 
 	EOF
 }
@@ -532,6 +537,10 @@ case "${1:-}" in
 
 	restore)
 	backup_restore "${@:2}"
+	;;
+
+	jar)
+	jar
 	;;
 
 	idle_server_daemon)
