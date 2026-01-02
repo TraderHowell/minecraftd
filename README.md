@@ -15,7 +15,7 @@ Based on the incredible work of [Gordian Edenhofer](https://github.com/Edenhofer
 - tar -- take world backups (optional)
 
 ## Installation
-You will need `git` and `make` to perform the installation below. (Tested on Debian 12)
+You will need `git` and `make` to perform the installation below. (Tested on Debian 13)
 ```
 git clone https://github.com/TraderHowell/minecraftd.git
 cd minecraftd
@@ -24,5 +24,5 @@ sudo make install
 ```
 
 ## Roadmap
-- A command to automatically download the latest vanilla server.jar and automatically open eula.txt in a text editor for acceptance.
+- Upon running the `jar` command for the first time, automatically open eula.txt in the default text editor for acceptance.
 - A command to automatically download and install a .mrpack modpack (probably by passing parameters to [mrpack-install](https://github.com/nothub/mrpack-install)).
